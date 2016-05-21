@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.where(twitter_name: params[:id]).first
-    @user.progress = params[:progress]
+    @user.progress += params[:new_taps]
 
     if @user.save!
       render json: @user
