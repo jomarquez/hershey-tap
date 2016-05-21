@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  def create
+    @user = User.new(twitter_name: params[:twitter_name])
+
+    if @user.save!
+      render json: @user
+    end
+  end
+
   def update
     @user = User.where(twitter_name: params[:id]).first
     @user.progress = params[:progress]
