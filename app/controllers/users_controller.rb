@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save!
-        format.html { redirect_to @user, notice: 'You have signed up for Hershey Crush!' }
+        format.html { redirect_to @user, notice: 'You have signed up for Hershey Tap!' }
         format.json { render @user }
       end
     end
