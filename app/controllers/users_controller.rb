@@ -28,6 +28,9 @@ class UsersController < ApplicationController
     @user = User.where(twitter_name: params[:id]).first || User.where(id: params[:id]).first
   end
 
+  def index
+    @users = User.all.order('progress desc')
+  end
   # TODO: get total taps to complete game (yours and your friends)..so we do need a url?
 
 end

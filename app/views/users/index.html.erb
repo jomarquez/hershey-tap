@@ -1,0 +1,10 @@
+<div class="hershey-progress">
+
+  <% @users.each do |user| %>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow=<%= user.progress %> aria-valuemin="0" aria-valuemax="100" style="width: <%= user.progress %>%;">
+        <%= user.twitter_name %> <%= user.progress %>%
+      </div>
+    </div>
+  <% end %>
+</div>
